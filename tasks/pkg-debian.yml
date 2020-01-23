@@ -41,6 +41,7 @@
   when: not ansible_check_mode
 
 - name: Ensure Datadog repository is up-to-date
+  become: yes
   apt_repository:
     filename: ansible_datadog_agent
     repo: "{{ item.value }}"
