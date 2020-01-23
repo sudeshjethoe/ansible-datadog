@@ -24,6 +24,7 @@
   when: datadog_apt_key_url_new is defined
 
 - name: Remove previous datadog apt list file
+  become: yes
   file:
     path: /etc/apt/sources.list.d/ansible_datadog_agent.list
     state: absent
